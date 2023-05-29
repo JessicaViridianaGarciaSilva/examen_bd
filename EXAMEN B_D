@@ -310,8 +310,10 @@ JOIN alumnos_ambiental t5 ON t5.grupo_amb LIKE '%6%' JOIN alumnos_contabilidad t
 JOIN alumnos_energias t7 ON t7.grupo_reno LIKE '%6%' JOIN alumnos_administracion t8 ON t8.grupo_adm LIKE '%6%'
 JOIN alumnos_tics t9 ON t9.grupo_tics LIKE '%6%';
 
-
-
+SELECT nombre_sis, grupo_sis
+FROM alumnos_sistemas t1
+INNER JOIN alumnos_industrial t2 ON t2.grupo_gas = t2.grupo_alumno
+WHERE t3.semestre_alumno = (SELECT semestre_alumno FROM Alumnos WHERE grupo_sis = grupo_sis)
 
 ---------------------------------------------------------------------------------------------------------------------------------------
                                                     /*EJERCICIO 2*/
